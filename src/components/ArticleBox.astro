@@ -1,0 +1,28 @@
+---
+const articles = Object.values(
+  import.meta.glob("../pages/blog/**/*.{md,mdx}", { eager: true })
+);
+
+articles.sort((a: any, b: any) => {
+  return (
+    new Date(b.frontmatter.pubDate).getTime() -
+    new Date(a.frontmatter.pubDate).getTime()
+  );
+});
+---
+
+<div class="mt-4">
+  <ul>
+    {
+      articles.map((post: any) => {
+        return (
+          <li>
+            <a href={post.url} class="hover:text-neutral-300">
+              {post.frontmatter.title}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>

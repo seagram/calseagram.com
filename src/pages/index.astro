@@ -1,0 +1,28 @@
+---
+import "../styles/global.css";
+import Head from "../components/Head.astro";
+import Link from "../components/Link.astro";
+import ArticleBox from "../components/ArticleBox.astro";
+---
+
+<html lang="en">
+  <Head />
+  <body class="bg-slate-100 flex justify-center">
+    <div class="w-full max-w-[700px] px-4">
+      <h1 class="--font-special text-3xl mt-10 mb-4">Cal Seagram</h1>
+      <p>Hi. I'm Cal, a software engineering student in Montreal.</p>
+      <p>I'm in my fourth year, minoring in Computer Science and Spanish.</p>
+      <p>
+        I run a <Link href="https://github.com/seagram/homelab">homelab</Link> where
+        I self-host some open source software.
+        <p>
+          I'm working on <Link href="https://github.com/seagram/fountain-rs">
+            fountain-rs</Link
+          >, a markup language for writing screenplays.
+        </p>
+        <p>I write from time to time.</p>
+      </p>
+      <ArticleBox />
+    </div>
+  </body>
+</html>
