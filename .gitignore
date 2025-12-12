@@ -3,6 +3,5 @@ dist/
 node_modules/
 .env
 .DS_Store
-*.md
 !README.md
 drafts/
