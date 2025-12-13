@@ -13,5 +13,5 @@ const { href, class: className = "" } = Astro.props;
   rel="noopener noreferrer"
   class={`text-neutral-600 hover:text-neutral-300 transition-colors ${className}`}
 >
-  <slot />
+  <span class="underline"><slot /></span>
 </a>
