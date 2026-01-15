@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
-@theme {
-  --font-special: var(--font-special);
+article p {
+  margin-bottom: 1em;
+}
+
+article blockquote {
+  border-left: 3px solid #888;
+  padding-left: 1em;
+  margin: 1.5em 0;
+  font-style: italic;
+  color: #555;
 }

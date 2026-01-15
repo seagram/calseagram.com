@@ -1,17 +1,17 @@
 ---
 interface Props {
-  href: string;
-  class?: string;
+    href: string;
+    class?: string;
 }
 
 const { href, class: className = "" } = Astro.props;
 ---
 
 <a
-  href={href}
-  target="_blank"
-  rel="noopener noreferrer"
-  class={`text-neutral-600 hover:text-neutral-300 transition-colors ${className}`}
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    class={`text-neutral-600 hover:text-neutral-300 transition-colors ${className}`}
 >
-  <span class="underline"><slot /></span>
+    <span class="underline"><slot /></span>
 </a>

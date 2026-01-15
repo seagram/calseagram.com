@@ -1,0 +1,62 @@
+---
+interface Props {
+    links: string[];
+}
+
+const { links } = Astro.props;
+---
+
+<aside class="sources">
+    <div class="sources-header">Sources</div>
+    <ul class="sources-list">
+        {
+            links.map((link) => (
+                <li>
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                        {link}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</aside>
+
+<style>
+    .sources {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 2rem;
+        right: 2rem;
+        padding: 0;
+    }
+
+    .sources-header {
+        font-size: 0.875rem;
+        color: #6b6a66;
+        margin-bottom: 0.5em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .sources-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sources-list li {
+        margin-bottom: 0.5em;
+    }
+
+    .sources-list a {
+        font-size: 0.875rem;
+        color: #888;
+        text-decoration: none;
+        word-break: break-all;
+        transition: color 0.2s;
+    }
+
+    .sources-list a:hover {
+        color: #555;
+    }
+</style>

@@ -3,26 +3,20 @@ import "../styles/global.css";
 import Head from "../components/Head.astro";
 import Link from "../components/Link.astro";
 import ArticleBox from "../components/ArticleBox.astro";
+import Title from "../components/Title.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
   <Head />
   <body class="bg-[#f2f1ed] flex justify-center font-[Georgia] py-8">
     <div
-      class="w-[700px] bg-[#faf9f5] shadow-sm px-8 py-10 min-h-[calc(100vh-4rem)] text-[#363431]"
+      class="w-[700px] bg-[#faf9f5] shadow-sm px-8 py-10 min-h-[calc(100vh-4rem)] text-[#363431] flex flex-col"
     >
-      <h1 class="text-3xl mb-4 font-special">Cal Seagram</h1>
-      <p>
-        Hi. I'm Cal, a software engineering student in Montreal. I'm in my
-        fourth year, minoring in Computer Science and Spanish. I run a <Link
-          href="https://github.com/seagram/homelab">homelab</Link
-        > where I self-host some open source software. I'm working on <Link
-          href="https://github.com/seagram/fountain-rs"
-        >
-          fountain-rs,</Link
-        >a markup language for writing screenplays.
-      </p>
+      <Title />
+      <!-- <p class="italic text-[#6b6a66] mt-0.5 text-center">Software Engineering student in Montreal</p> -->
       <ArticleBox />
+      <!-- <Footer /> -->
     </div>
   </body>
 </html>
