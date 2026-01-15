@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
+layout: ../../Layouts/ArticleLayout.astro
 title: "Excerpts: David Fincher"
 pubDate: 2025-12-18
 ---

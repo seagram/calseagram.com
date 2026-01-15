@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
+layout: ../../Layouts/ArticleLayout.astro
 title: "Introduction"
 pubDate: 2025-12-21
 pinned: true

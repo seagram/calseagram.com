@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
+layout: ../../Layouts/ArticleLayout.astro
 title: "Excerpts: Toni Morrison"
 pubDate: 2025-11-27
 ---

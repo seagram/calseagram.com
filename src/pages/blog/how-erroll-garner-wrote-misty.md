@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
+layout: ../../Layouts/ArticleLayout.astro
 title: "How Erroll Garner Wrote 'Misty'"
 pubDate: 2025-12-11
 ---

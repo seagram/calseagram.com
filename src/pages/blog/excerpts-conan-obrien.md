@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
+layout: ../../Layouts/ArticleLayout.astro
 title: "Excerpts: Conan O'Brien"
 pubDate: 2026-01-07
 ---
