@@ -1,7 +1,7 @@
 ---
 layout: ../../Layouts/ArticleLayout.astro
-title: "The Attention Economy"
-pubDate: 2026-02-28
+title: "Artificial Intelligence"
+pubDate: 2026-01-31
 ---
 
 Writing in progress.
