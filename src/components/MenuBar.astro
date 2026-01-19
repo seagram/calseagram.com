@@ -1,0 +1,30 @@
+---
+interface Props {
+    currentPage: "about" | "writing" | "archive";
+}
+
+const { currentPage } = Astro.props;
+
+const tabs = [
+    { name: "ABOUT", href: "/about", id: "about" },
+    { name: "WRITING", href: "/", id: "writing" },
+    { name: "ARCHIVE", href: "/archive", id: "archive" },
+];
+---
+
+<nav class="flex justify-center gap-6 mb-8">
+    {
+        tabs.map((tab) => (
+            <a
+                href={tab.href}
+                class={`text-xs tracking-widest ${
+                    currentPage === tab.id
+                        ? "text-[#363431] underline underline-offset-4"
+                        : "text-[#6b6864] hover:text-[#363431]"
+                }`}
+            >
+                {tab.name}
+            </a>
+        ))
+    }
+</nav>

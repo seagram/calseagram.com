@@ -1,44 +1,68 @@
 ---
-const articles = Object.values(
-  import.meta.glob("../pages/blog/**/*.{md,mdx}", { eager: true })
+interface Props {
+    section?: "writing" | "archive";
+}
+
+const { section = "writing" } = Astro.props;
+
+const writingArticles = Object.values(
+    import.meta.glob("../pages/writing/**/*.{md,mdx}", { eager: true }),
 );
 
+const archiveArticles = Object.values(
+    import.meta.glob("../pages/archive/**/*.{md,mdx}", { eager: true }),
+);
+
+const articles = section === "archive" ? archiveArticles : writingArticles;
+
 articles.sort((a: any, b: any) => {
-  const aPinned = a.frontmatter.pinned === true;
-  const bPinned = b.frontmatter.pinned === true;
+    const aPinned = a.frontmatter.pinned === true;
+    const bPinned = b.frontmatter.pinned === true;
 
-  if (aPinned && !bPinned) return -1;
-  if (!aPinned && bPinned) return 1;
+    if (aPinned && !bPinned) return -1;
+    if (!aPinned && bPinned) return 1;
 
-  return (
-    new Date(b.frontmatter.pubDate).getTime() -
-    new Date(a.frontmatter.pubDate).getTime()
-  );
+    return (
+        new Date(b.frontmatter.pubDate).getTime() -
+        new Date(a.frontmatter.pubDate).getTime()
+    );
 });
 
 const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "UTC",
-  });
+    return new Date(date).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC",
+    });
 };
 ---
 
-<div class="space-y-4 px-4">
-  {
-    articles.map((post: any) => {
-      return (
-        <div class="group">
-          <a href={post.url} class="block">
-            <h3 class="font-[Georgia] text-base leading-relaxed flex justify-between items-baseline">
-              <span class="group-hover:underline">{post.frontmatter.title}{post.frontmatter.pinned && <svg class="w-3.5 h-3.5 ml-2 fill-[#9a9894] inline rotate-45" viewBox="0 0 24 28"><path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5v10l1 1 1-1v-10h5v-2l-2-2z"/></svg>}</span>
-              <span class="text-sm text-[#6b6864] italic ml-4">{formatDate(post.frontmatter.pubDate)}</span>
-            </h3>
-          </a>
-        </div>
-      );
-    })
-  }
+<div class="space-y-4 px-2 sm:px-4">
+    {
+        articles.map((post: any) => {
+            return (
+                <div class="group">
+                    <a href={post.url} class="block">
+                        <h3 class="font-[Georgia] text-base leading-relaxed flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 sm:gap-4">
+                            <span class="group-hover:underline">
+                                {post.frontmatter.title}
+                                {post.frontmatter.pinned && (
+                                    <svg
+                                        class="w-3.5 h-3.5 ml-2 fill-[#9a9894] inline rotate-45"
+                                        viewBox="0 0 24 28"
+                                    >
+                                        <path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5v10l1 1 1-1v-10h5v-2l-2-2z" />
+                                    </svg>
+                                )}
+                            </span>
+                            <span class="text-sm text-[#6b6864] italic shrink-0">
+                                {formatDate(post.frontmatter.pubDate)}
+                            </span>
+                        </h3>
+                    </a>
+                </div>
+            );
+        })
+    }
 </div>
