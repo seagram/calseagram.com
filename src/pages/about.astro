@@ -1,30 +1,21 @@
 ---
-import "../styles/global.css";
-import Head from "../components/Head.astro";
-import Title from "../components/Title.astro";
-import Footer from "../components/Footer.astro";
-import MenuBar from "../components/MenuBar.astro";
+import BaseLayout from "../Layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-    <Head />
-    <body
-        class="bg-[#faf9f5] sm:bg-[#f2f1ed] text-lg flex justify-center font-et-book py-0 sm:py-8 px-0 sm:px-3"
-    >
-        <div
-            class="w-full max-w-[700px] sm:bg-[#faf9f5] sm:shadow-sm px-4 sm:px-8 py-10 min-h-screen sm:min-h-[calc(100vh-4rem)] text-[#363431] flex flex-col"
-        >
-            <Title />
-            <MenuBar currentPage="about" />
-            <div class="px-2 sm:px-4">
-                <p class="leading-relaxed">
-                    Hi. I'm Cal, a software engineering student in Montreal. I'm
-                    in my fourth year, minoring in computer science and Spanish.
-                    I use this site to bookmark things I've found over time. I
-                    <i>(try to)</i> write sometimes. An RSS feed for this site
-                    can be found <a href="/rss.xml" class="underline">here</a>.
-                </p>
-            </div>
-        </div>
-    </body>
-</html>
+<BaseLayout currentPage="about" bodyClass="text-lg">
+    <div class="px-2 sm:px-4">
+        <p class="leading-relaxed">
+            Hi. I'm Cal, a software engineering student in Montreal. I'm
+            in my fourth year, minoring in computer science and Spanish.
+            I use this site to bookmark things I've found over time. I
+            <i>(try to)</i> write sometimes.
+        </p>
+
+        <p class="mt-4">
+            An RSS feed for this site can be found <a
+                href="/rss.xml"
+                class="underline">here</a
+            >.
+        </p>
+    </div>
+</BaseLayout>

@@ -1,9 +1,13 @@
-import rss from '@astrojs/rss';
-import sanitizeHtml from 'sanitize-html';
+import rss from "@astrojs/rss";
+import sanitizeHtml from "sanitize-html";
 
 export async function GET(context) {
-  const writingImports = import.meta.glob('./writing/**/*.{md,mdx}', { eager: true });
-  const archiveImports = import.meta.glob('./archive/**/*.{md,mdx}', { eager: true });
+  const writingImports = import.meta.glob("./writing/**/*.{md,mdx}", {
+    eager: true,
+  });
+  const archiveImports = import.meta.glob("./archive/**/*.{md,mdx}", {
+    eager: true,
+  });
 
   const allPosts = [
     ...Object.values(writingImports),
@@ -12,7 +16,7 @@ export async function GET(context) {
 
   const items = await Promise.all(
     allPosts.map(async (post) => {
-      // compiledContent() is only available for .md files, not .mdx
+      // Only available for .md files, not .mdx
       const content = post.compiledContent
         ? sanitizeHtml(await post.compiledContent())
         : undefined;
@@ -23,16 +27,16 @@ export async function GET(context) {
         link: post.url,
         content,
       };
-    })
+    }),
   );
 
   items.sort(
-    (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
+    (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime(),
   );
 
   return rss({
-    title: 'Cal Seagram',
-    description: 'Writing and archive from Cal Seagram',
+    title: "Cal Seagram",
+    description: "Writing and archive.",
     site: context.site,
     items,
   });

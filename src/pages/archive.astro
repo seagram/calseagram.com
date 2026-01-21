@@ -1,25 +1,8 @@
 ---
-import "../styles/global.css";
-import Head from "../components/Head.astro";
-import Link from "../components/Link.astro";
+import BaseLayout from "../Layouts/BaseLayout.astro";
 import ArticleBox from "../components/ArticleBox.astro";
-import Title from "../components/Title.astro";
-import Footer from "../components/Footer.astro";
-import MenuBar from "../components/MenuBar.astro";
 ---
 
-<html lang="en">
-    <Head />
-    <body
-        class="bg-[#faf9f5] sm:bg-[#f2f1ed] flex justify-center font-et-book py-0 sm:py-8 px-0 sm:px-3"
-    >
-        <div
-            class="w-full max-w-[700px] sm:bg-[#faf9f5] sm:shadow-sm px-4 sm:px-8 py-10 min-h-screen sm:min-h-[calc(100vh-4rem)] text-[#363431] flex flex-col"
-        >
-            <Title />
-            <MenuBar currentPage="archive" />
-            <ArticleBox section="archive" />
-            <!-- <Footer /> -->
-        </div>
-    </body>
-</html>
+<BaseLayout currentPage="archive">
+    <ArticleBox section="archive" />
+</BaseLayout>
