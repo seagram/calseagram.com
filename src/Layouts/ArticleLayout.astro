@@ -29,7 +29,7 @@ const displayDate = new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
                         {displayDate}
                     </p>
                 </header>
-                <div class="hyphens-auto text-lg">
+                <div class="prose prose-lg prose-stone hyphens-auto max-w-none">
                     <slot />
                 </div>
             </article>
