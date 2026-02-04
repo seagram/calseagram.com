@@ -6,7 +6,7 @@ pubDate: 2025-12-18
 
 > People will say, "There are a million ways to shoot a scene", but I don't think so. I think there're two, maybe. And the other one is wrong.
 
-> _[regarding which personality traits help in being a director]_ Belligerence certainly helps. And there's a requisite paranoia. There's fear--fear of failure--and an overwhelming urge to be liked.
+> _[on the traits that make a good director]_ Belligerence certainly helps. And there's a requisite paranoia. There's fear--fear of failure--and an overwhelming urge to be liked.
 
 > I do agree you can't just make movies three hours long for no apparent reason. For a romantic comedy to be three hours long, that's longer than most marriages.
 
