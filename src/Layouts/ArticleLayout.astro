@@ -15,7 +15,7 @@ const displayDate = new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
     <Head />
     <body class="bg-[#faf9f5] sm:bg-[#f2f1ed] flex justify-center font-et-book py-0 sm:py-8 px-0 sm:px-3">
         <div
-            class="w-full max-w-[700px] sm:bg-[#faf9f5] sm:shadow-sm px-4 sm:px-8 py-10 min-h-screen sm:min-h-[calc(100vh-4rem)] text-[#363431] relative"
+            class="w-full max-w-3xl sm:bg-[#faf9f5] sm:shadow-sm px-4 sm:px-8 py-10 min-h-screen sm:min-h-[calc(100vh-4rem)] text-[#363431] relative"
         >
             <Title />
             <article>
@@ -33,6 +33,9 @@ const displayDate = new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
                     <slot />
                 </div>
             </article>
+            <footer class="mt-10 pt-6 border-t border-[#e5e4e0] text-sm text-[#6b6864]">
+                <p>This post is 100% written by a human. It is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="underline hover:text-[#363431]">CC BY-SA 4.0</a>.</p>
+            </footer>
         </div>
     </body>
 </html>
