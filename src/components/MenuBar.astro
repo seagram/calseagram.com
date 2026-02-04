@@ -1,12 +1,11 @@
 ---
 interface Props {
-    currentPage: "about" | "writing" | "archive";
+    currentPage: "writing" | "archive";
 }
 
 const { currentPage } = Astro.props;
 
 const tabs = [
-    { name: "ABOUT", href: "/about", id: "about" },
     { name: "WRITING", href: "/", id: "writing" },
     { name: "ARCHIVE", href: "/archive", id: "archive" },
 ];
