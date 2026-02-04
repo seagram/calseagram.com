@@ -1,19 +1,7 @@
 ---
-interface Props {
-    section?: "writing" | "archive";
-}
-
-const { section = "writing" } = Astro.props;
-
-const writingArticles = Object.values(
+const articles = Object.values(
     import.meta.glob("../pages/writing/**/*.{md,mdx}", { eager: true }),
 );
-
-const archiveArticles = Object.values(
-    import.meta.glob("../pages/archive/**/*.{md,mdx}", { eager: true }),
-);
-
-const articles = section === "archive" ? archiveArticles : writingArticles;
 
 articles.sort((a: any, b: any) => {
     const aPinned = a.frontmatter.pinned === true;

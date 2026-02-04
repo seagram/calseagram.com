@@ -2,14 +2,12 @@
 import "../styles/global.css";
 import Head from "../components/Head.astro";
 import Title from "../components/Title.astro";
-import MenuBar from "../components/MenuBar.astro";
 
 interface Props {
-    currentPage: "writing" | "archive";
     bodyClass?: string;
 }
 
-const { currentPage, bodyClass = "" } = Astro.props;
+const { bodyClass = "" } = Astro.props;
 ---
 
 <html lang="en">
@@ -24,7 +22,6 @@ const { currentPage, bodyClass = "" } = Astro.props;
             class="w-full max-w-3xl sm:bg-[#faf9f5] sm:shadow-sm px-4 sm:px-8 py-10 min-h-screen sm:min-h-[calc(100vh-4rem)] text-[#363431] flex flex-col"
         >
             <Title />
-            <MenuBar currentPage={currentPage} />
             <slot />
         </div>
     </body>
