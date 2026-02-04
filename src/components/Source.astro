@@ -6,57 +6,64 @@ interface Props {
 const { links } = Astro.props;
 ---
 
-<aside class="sources">
-    <div class="sources-header">Sources</div>
-    <ul class="sources-list">
+<aside class="sources" aria-labelledby="sources-heading">
+    <h2 id="sources-heading" class="sources-heading">Sources</h2>
+    <ol class="sources-list">
         {
-            links.map((link) => (
+            links.map((link, i) => (
                 <li>
                     <a href={link} target="_blank" rel="noopener noreferrer">
-                        {link}
+                        {new URL(link).hostname.replace(/^www\./, '')}
                     </a>
                 </li>
             ))
         }
-    </ul>
+    </ol>
 </aside>
 
 <style>
     .sources {
-        position: absolute;
-        bottom: 2.5rem;
-        left: 2rem;
-        right: 2rem;
-        padding: 0;
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #e5e4e0;
     }
 
-    .sources-header {
-        font-size: 0.875rem;
-        color: #6b6a66;
-        margin-bottom: 0.5em;
+    .sources-heading {
+        font-size: 0.75rem;
+        font-weight: 400;
+        color: #8a8984;
+        margin: 0 0 0.75rem 0;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.1em;
     }
 
     .sources-list {
         list-style: none;
         padding: 0;
+        padding-inline-start: 0;
         margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 1rem;
     }
 
     .sources-list li {
-        margin-bottom: 0.5em;
+        font-size: 0.8125rem;
+        color: #8a8984;
+    }
+
+    .sources-list li::before {
+        content: counter(list-item) ".";
+        margin-right: 0.25rem;
     }
 
     .sources-list a {
-        font-size: 0.875rem;
-        color: #888;
+        color: #6b6a66;
         text-decoration: none;
-        word-break: break-all;
-        transition: color 0.2s;
+        transition: color 0.15s;
     }
 
     .sources-list a:hover {
-        color: #555;
+        color: #363431;
     }
 </style>

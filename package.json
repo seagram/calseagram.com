@@ -12,7 +12,7 @@
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/rss": "^4.0.15",
     "@tailwindcss/vite": "^4.1.17",
-    "astro": "5.16.6",
+    "astro": "5.16.12",
     "sanitize-html": "^2.17.0"
   },
   "devDependencies": {
