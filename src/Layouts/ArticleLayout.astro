@@ -10,14 +10,14 @@ const displayDate = new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
 ---
 
 <BaseLayout>
-    <article>
-        <header class="mb-6 text-center">
+    <article class="mt-8">
+        <header class="mb-6">
             <h1
-                class="text-xl font-et-book tracking-widest uppercase"
+                class="text-3xl font-et-book"
             >
                 {frontmatter.title}
             </h1>
-            <p class="text-sm text-[#6b6864] mt-2 italic">
+            <p class="text-base text-[#6b6864] mt-2 italic">
                 {displayDate}
             </p>
         </header>

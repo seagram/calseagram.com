@@ -1,6 +1,6 @@
 ---
 layout: ../../Layouts/ArticleLayout.astro
-title: "Introduction"
+title: "About"
 pubDate: 2026-02-04
 pinned: true
 ---

@@ -21,8 +21,10 @@ const { bodyClass = "" } = Astro.props;
         <div
             class="w-full max-w-3xl sm:bg-[#faf9f5] sm:shadow-sm px-4 sm:px-8 py-10 min-h-screen text-[#363431] flex flex-col"
         >
-            <Title />
-            <slot />
+            <div class="px-2 sm:px-4">
+                <Title />
+                <slot />
+            </div>
         </div>
     </body>
 </html>

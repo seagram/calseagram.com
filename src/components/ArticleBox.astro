@@ -26,13 +26,13 @@ const formatDate = (date: string) => {
 };
 ---
 
-<div class="space-y-4 px-2 sm:px-4">
+<div class="space-y-4">
     {
         articles.map((post: any) => {
             return (
                 <div class="group">
                     <a href={post.url} class="block">
-                        <h3 class="font-et-book text-lg leading-relaxed flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 sm:gap-4">
+                        <h3 class="font-et-book text-xl leading-relaxed flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 sm:gap-4">
                             <span class="group-hover:underline">
                                 {post.frontmatter.title}
                                 {post.frontmatter.pinned && (
@@ -44,7 +44,7 @@ const formatDate = (date: string) => {
                                     </svg>
                                 )}
                             </span>
-                            <span class="text-sm text-[#6b6864] italic shrink-0">
+                            <span class="text-base text-[#6b6864] italic shrink-0">
                                 {formatDate(post.frontmatter.pubDate)}
                             </span>
                         </h3>
