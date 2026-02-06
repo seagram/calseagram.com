@@ -1,56 +1,82 @@
 ---
 const articles = Object.values(
     import.meta.glob("../pages/writing/**/*.{md,mdx}", { eager: true }),
+) as any[];
+
+articles.sort((a, b) =>
+    new Date(b.frontmatter.pubDate).getTime() -
+    new Date(a.frontmatter.pubDate).getTime()
 );
 
-articles.sort((a: any, b: any) => {
-    const aPinned = a.frontmatter.pinned === true;
-    const bPinned = b.frontmatter.pinned === true;
-
-    if (aPinned && !bPinned) return -1;
-    if (!aPinned && bPinned) return 1;
-
-    return (
-        new Date(b.frontmatter.pubDate).getTime() -
-        new Date(a.frontmatter.pubDate).getTime()
-    );
-});
+const pinned = articles.filter((p) => p.frontmatter.pinned === true);
+const unpinned = articles.filter((p) => p.frontmatter.pinned !== true);
 
 const formatDate = (date: string) => {
     return new Date(date).toLocaleDateString("en-US", {
-        year: "numeric",
         month: "long",
         day: "numeric",
         timeZone: "UTC",
     });
 };
+
+const grouped = unpinned.reduce(
+    (acc, post) => {
+        const year = new Date(post.frontmatter.pubDate).getUTCFullYear().toString();
+        if (!acc[year]) acc[year] = [];
+        acc[year].push(post);
+        return acc;
+    },
+    {} as Record<string, any[]>,
+);
+
+const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
 ---
 
+<div class="space-y-8">
+    {pinned.length > 0 && (
+        <section>
 <div class="space-y-4">
-    {
-        articles.map((post: any) => {
-            return (
-                <div class="group">
-                    <a href={post.url} class="block">
-                        <h3 class="font-et-book text-xl leading-relaxed flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 sm:gap-4">
-                            <span class="group-hover:underline">
-                                {post.frontmatter.title}
-                                {post.frontmatter.pinned && (
+                {pinned.map((post: any) => (
+                    <div class="group">
+                        <a href={post.url} class="block">
+                            <h3 class="font-et-book text-xl leading-relaxed flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 sm:gap-4">
+                                <span class="group-hover:underline">
+                                    {post.frontmatter.title}
                                     <svg
                                         class="w-3.5 h-3.5 ml-2 fill-icon inline rotate-45"
                                         viewBox="0 0 24 28"
                                     >
                                         <path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5v10l1 1 1-1v-10h5v-2l-2-2z" />
                                     </svg>
-                                )}
-                            </span>
-                            <span class="text-base text-text-muted italic shrink-0">
-                                {formatDate(post.frontmatter.pubDate)}
-                            </span>
-                        </h3>
-                    </a>
+                                </span>
+                            </h3>
+                        </a>
+                    </div>
+                ))}
+            </div>
+        </section>
+    )}
+    {
+        years.map((year) => (
+            <section>
+                <h2 class="font-et-book text-lg text-text-muted mb-3">{year}</h2>
+                <div class="space-y-4">
+                    {grouped[year].map((post: any) => (
+                        <div class="group">
+                            <a href={post.url} class="block">
+                                <h3 class="font-et-book text-xl leading-relaxed flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 sm:gap-4">
+                                    <span class="group-hover:underline">
+                                        {post.frontmatter.title}
+                                    </span>
+                                    <span class="text-base text-text-muted italic shrink-0">
+                                        {formatDate(post.frontmatter.pubDate)}
+                                    </span>
+                                </h3>
+                            </a>
+                        </div>
+                    ))}
                 </div>
-            );
-        })
+            </section>
+        ))
     }
 </div>
