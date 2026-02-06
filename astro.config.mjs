@@ -33,11 +33,9 @@ export default defineConfig({
           {
             weight: 400,
             style: "italic",
-            // TODO: add italicized font support
-            src: ["./src/assets/fonts/et-book-roman-old-style-figures.woff"],
-            // src: [
-            //   "./src/assets/fonts/et-book-display-italic-old-style-figures.woff",
-            // ],
+            src: [
+              "./src/assets/fonts/et-book-display-italic-old-style-figures.woff",
+            ],
           },
         ],
       },

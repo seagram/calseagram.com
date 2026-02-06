@@ -1,0 +1,24 @@
+---
+layout: ../../Layouts/ArticleLayout.astro
+title: "Rebecca Purple"
+pubDate: 1970-01-01
+page: true
+---
+
+CSS (Cascading Style Sheets) is what people use to design how different parts of a website look. It includes a list of colours you can use like "red" and "blue". In 2014, the group in charge of CSS suggested adding a new colour. 
+
+
+> Following a proposal sent to social media, it is suggested to add the named color 'rebeccapurple', for value #663399, to CSS Color Level 4. This is a tribute to Eric Meyer's daughter who recently passed away and a mark of support from all the Web community to Eric. I requested to ping Eric to be absolutely sure he is ok with this; he responded "he was honored by the gesture, and would love to accept it".
+
+The following is Eric Meyer's response:
+
+> I have been made aware of the proposal to add the named color beccapurple (equivalent to #663399) to the CSS specification, and also of the debate that surrounds it.
+>
+> I understand the arguments both for and against the proposal, but obviously I am too close to both the subject and the situation to be able to judge for myself.  Accordingly, I let the editors of the Colors specification know that I will accept whatever the Working Group decides on this issue, pro or con.  The WG is debating the matter now.
+>
+> I did set one condition: that if the proposal is accepted, the official name be rebeccapurple.  A couple of weeks before she died, Rebecca informed us that she was about to be a big girl of six years old, and Becca was a baby name.  Once she turned six, she wanted everyone (not just me) to call her Rebecca, not Becca.
+She made it to six.  For almost twelve hours, she was six.  So Rebecca it is and must be.
+>
+> Kat and I are deeply touched by all the caring and support from the community, and this proposal does mean a lot to me personally.  It will always mean that, even if the proposal is ultimately declined.  I always thought “it’s an honor to have been nominated” was a pleasant spin on sour grapes, but it’s not.  It really is an honor, regardless of the outcome, even if it is an honor I wish nobody had had cause to think of in the first place.
+>
+> Thank you all.  For everything.
