@@ -13,11 +13,11 @@ const displayDate = new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
     <article class="mt-8">
         <header class="mb-6">
             <h1
-                class="text-3xl font-et-book"
+                class="text-4xl font-et-book"
             >
                 {frontmatter.title}
             </h1>
-            <p class="text-base text-[#6b6864] mt-2 italic">
+            <p class="text-lg text-[#6b6864] mt-2 italic">
                 {displayDate}
             </p>
         </header>
@@ -26,7 +26,6 @@ const displayDate = new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
         </div>
     </article>
     <footer class="mt-10 pt-6 border-t border-[#e5e4e0] text-sm text-[#6b6864]">
-        <p>This post is 100% written by a human. It is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="underline hover:text-[#363431]">CC BY-SA 4.0</a>.</p>
-        <p class="mt-2">Cal Seagram © 2022-2026</p>
+        <p>This post is 100% written by a human. It is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="underline hover:text-[#363431]">CC BY-SA 4.0</a>. Cal Seagram © 2022-2026</p>
     </footer>
 </BaseLayout>
