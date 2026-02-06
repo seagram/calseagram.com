@@ -3,4 +3,15 @@
 
 @theme inline {
   --font-et-book: var(--font-et-book);
+
+  --color-bg: #f4f2e9;
+  --color-text: #2c251d;
+  --color-text-prose: #382c1a;
+  --color-text-heading: #363431;
+  --color-text-muted: #6b6864;
+  --color-text-faint: #8a8984;
+  --color-link: #6b6a66;
+  --color-link-hover: #363431;
+  --color-icon: #9a9894;
+  --color-border: #e5e4e0;
 }

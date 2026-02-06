@@ -37,14 +37,14 @@ const formatDate = (date: string) => {
                                 {post.frontmatter.title}
                                 {post.frontmatter.pinned && (
                                     <svg
-                                        class="w-3.5 h-3.5 ml-2 fill-[#9a9894] inline rotate-45"
+                                        class="w-3.5 h-3.5 ml-2 fill-icon inline rotate-45"
                                         viewBox="0 0 24 28"
                                     >
                                         <path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5v10l1 1 1-1v-10h5v-2l-2-2z" />
                                     </svg>
                                 )}
                             </span>
-                            <span class="text-base text-[#6b6864] italic shrink-0">
+                            <span class="text-base text-text-muted italic shrink-0">
                                 {formatDate(post.frontmatter.pubDate)}
                             </span>
                         </h3>

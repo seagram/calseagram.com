@@ -6,13 +6,13 @@ interface Props {
 const { links } = Astro.props;
 ---
 
-<aside class="sources" aria-labelledby="sources-heading">
-    <h2 id="sources-heading" class="sources-heading">Sources</h2>
-    <ol class="sources-list">
+<aside class="mt-12 pt-6 border-t border-border" aria-labelledby="sources-heading">
+    <h2 id="sources-heading" class="text-xs font-normal text-text-faint mb-3 uppercase tracking-widest">Sources</h2>
+    <ol class="sources-list list-none p-0 ps-0 m-0 flex flex-wrap gap-x-4 gap-y-1">
         {
             links.map((link, i) => (
-                <li>
-                    <a href={link} target="_blank" rel="noopener noreferrer">
+                <li class="text-[0.8125rem] text-text-faint">
+                    <a href={link} target="_blank" rel="noopener noreferrer" class="text-link no-underline transition-colors hover:text-link-hover">
                         {new URL(link).hostname.replace(/^www\./, '')}
                     </a>
                 </li>
@@ -22,48 +22,8 @@ const { links } = Astro.props;
 </aside>
 
 <style>
-    .sources {
-        margin-top: 3rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid #e5e4e0;
-    }
-
-    .sources-heading {
-        font-size: 0.75rem;
-        font-weight: 400;
-        color: #8a8984;
-        margin: 0 0 0.75rem 0;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-    }
-
-    .sources-list {
-        list-style: none;
-        padding: 0;
-        padding-inline-start: 0;
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.25rem 1rem;
-    }
-
-    .sources-list li {
-        font-size: 0.8125rem;
-        color: #8a8984;
-    }
-
     .sources-list li::before {
         content: counter(list-item) ".";
         margin-right: 0.25rem;
-    }
-
-    .sources-list a {
-        color: #6b6a66;
-        text-decoration: none;
-        transition: color 0.15s;
-    }
-
-    .sources-list a:hover {
-        color: #363431;
     }
 </style>
